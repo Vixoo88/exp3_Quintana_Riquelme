@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+
+    <form id="formulario">
+        <label for="rut">Rut:</label>
+        <input type="text" name="rut" id="rut" placeholder="121231235" minlength="9" maxlength="10" required>
+        <br>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" placeholder="Ingrese su nombre" minlength="3" maxlength="20" required>
+        <br>
+        <label for="apellidop">Apellido paterno:</label>
+        <input type="text" name="apellidop" id="apellidop" placeholder="Ingrese su apellido paterno" minlength="3" maxlength="20" required>
+        <br>
+        <label for="apellidom">Apellido materno:</label>
+        <input type="text" name="apellidom" id="apellidom" placeholder="Ingrese su apellido materno" minlength="3" maxlength="20" required>
+        <br>
+        <label for="nacimiento">Fecha de nacimiento:</label>
+        <input type="date" name="date" id="date" required>
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad" placeholder="Ingrese su edad" required>
+        <br>
+        <label for="genero">Género:</label>
+        <select name="genero" id="genero" required>
+          <option value=""></option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <br>
+        <label for="celular">Celular:</label>
+        <input type="tel" name="celular" id="celular" placeholder="+569" minlength="9" maxlength="12" required>
+        <br>
+        <label for="correo">Email:</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
+        <br>  
+        <label for="profesion">Profesión:</label>
+        <input type="text" name="profesion" id="profesion" placeholder="Ingrese su profesión" required>
+        <br>
+        <label for="motivacion">Motivación para postular:</label>
+        <br>
+        <textarea name="motivacion" id="motivacion" cols="30" rows="10" required></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+        <input type="button" value="Crear carta" id="crear-carta">
+        <br>
+        <label for="carta">Carta de presentación:</label>
+        <br>
+        <textarea name="carta" id="carta" cols="30" rows="10" readonly></textarea>
+      </form>
+
+      
+      <script src="{% static 'javascript/scripts.js' %}"></script>
+
+      {% endblock %}
+
