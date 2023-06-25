@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/productos.css' %}">
+
+<div class="container">
+    <h1>Productos</h1>
+    <table id="customers" border="1">
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th colspan="2" id="mid">Realizar</th>
+        </thead>
+        {% for x in pro %}
+
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.nombre}}</td>
+            <td>{{x.descripcion}}</td>
+            <td>${{x.precio}}</td>
+            <td>{{x.imagen}}</td>
+            <td>
+                <a href="{% url 'actualizar' x.id %}"><button id="up">Actualizar</button></a>
+            </td>
+            <td>
+                <a href="{% url 'eliminar' x.id %}"><button id="del">Eliminar</button></a>
+            </td>
+        </tr>
+        {% endfor %}    
+        
+
+
+    </table>
+    <br><br>
+    <a href="{% url 'agregar' %}"><button id="new3">Agregar Producto</button></a>
+</div>
+
+
+{% endblock %}

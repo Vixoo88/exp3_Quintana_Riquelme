@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/ventas.css' %}">
+
+<div class="container2">
+    <h1>Actualizar</h1>
+    <form action="{% url 'actualizarrec' pro.id %}" method="post">
+        {% csrf_token %}
+        <label for="">Nombre</label><br><br>
+        <input type="text" name="nombre" value="{{pro.nombre}}"><br><br>
+        <label for="">Descripcion</label><br><br>
+        <input type="text" name="descripcion" value="{{pro.descripcion}}"><br><br>
+        <label for="">Precio</label><br><br>
+        <input type="text" name="precio" value="{{pro.precio}}"><br><br>
+        <label for="">Imagen</label><br><br>
+        <input type="file" name="imagen"><br><br>
+        <button type="submit" id="new1">Actualizar</button>
+    </form>
+
+</div>
+
+
+{% endblock %}
