@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, informacion, galeria, formulario, api, productos, agregarrec, agregar, eliminar, actualizar, actualizarrec
+from .views import index, informacion, galeria, formulario, api, productos, agregarrec, agregar, eliminar, actualizar, actualizarrec, register
 
 urlpatterns = [
     path('', index, name='index'),
@@ -15,5 +15,5 @@ urlpatterns = [
     path('actualizar/<int:id>/', actualizar,name='actualizar'),
     path('actualizar/actualizarrec/<int:id>/', actualizarrec,name='actualizarrec'),
 
-    
+    path('register/', register, name='register'),
 ]
